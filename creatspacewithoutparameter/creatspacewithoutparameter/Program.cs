@@ -5,7 +5,8 @@ using Autodesk.Revit.UI;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.UI.Selection;
 
-namespace 拾取创建空间
+
+namespace 拾取创建空间 //英文表达，添加注释
 {
     [TransactionAttribute(TransactionMode.Manual)]
 
@@ -18,7 +19,7 @@ namespace 拾取创建空间
             Selection sel = uiApp.ActiveUIDocument.Selection;
 
             Transaction ts = new Transaction(doc, "");
-            ts.Start();
+            ts.Start(); 
 
             Room room = doc.GetElement(sel.PickObject(ObjectType.Element, "选择一个房间")) as Room;
             LocationPoint roomPoint = room.Location as LocationPoint;
